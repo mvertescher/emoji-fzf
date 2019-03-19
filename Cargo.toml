@@ -1,0 +1,7 @@
+[package]
+authors = ["Matt Vertescher <mvertescher@gmail.com>"]
+edition = "2018"
+name = "emoji-fzf"
+version = "0.1.0"
+
+[dependencies]
