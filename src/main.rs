@@ -4,7 +4,8 @@ fn main() {
     println!("Enter an emoji name!");
 
     let mut word = String::new();
-    std::io::stdin().read_line(&mut word)
+    std::io::stdin()
+        .read_line(&mut word)
         .expect("Failed to read line");
     let word = word.trim();
 
