@@ -1,7 +1,27 @@
-# emoji-fzf
-🦀 An emoji fuzzy finder written in Rust.
+# `emoji-fzf`
+
+> 🦀 An emoji fuzzy finder written in Rust.
 
 Inspired by an excellent tool of the same name: [emoji-fzf](https://github.com/noahp/emoji-fzf)!
+
+## Usage
+
+```
+emoji-fzf 0.1.0
+Matt Vertescher <mvertescher@gmail.com>
+An emoji fuzzy finder!
+
+USAGE:
+    emoji-fzf [SUBCOMMAND]
+
+FLAGS:
+    -h, --help       Prints help information
+    -V, --version    Prints version information
+
+SUBCOMMANDS:
+    get     Get unicode emoji given a name
+    help    Prints this message or the help of the given subcommand(s)
+```
 
 ## License
 
