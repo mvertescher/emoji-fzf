@@ -1,7 +1,13 @@
 [package]
 authors = ["Matt Vertescher <mvertescher@gmail.com>"]
+categories = ["cli", "emoji"]
+description = "An emoji fuzzy finder!"
 edition = "2018"
+homepage = "https://github.com/mvertescher/emoji-fzf"
+license = "MIT OR Apache-2.0"
 name = "emoji-fzf"
+repository = "https://github.com/mvertescher/emoji-fzf"
 version = "0.1.0"
 
 [dependencies]
+clap = "2.32"

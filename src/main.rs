@@ -1,21 +1,36 @@
+use clap::{crate_name, crate_description, crate_version, crate_authors};
+use clap::{App, Arg, SubCommand};
+
 mod emojis;
 
 fn main() {
-    println!("Enter an emoji name!");
+    let matches = App::new(crate_name!())
+        .about(crate_description!())
+        .version(crate_version!())
+        .author(crate_authors!())
+        .subcommand(SubCommand::with_name("get")
+                    .about("Get unicode emoji given a name")
+                    .arg(Arg::with_name("name")
+                        .help("Name of the emoji to display")
+                        .index(1)
+                        .required(true)))
+        .get_matches();
 
-    let mut word = String::new();
-    std::io::stdin()
-        .read_line(&mut word)
-        .expect("Failed to read line");
-    let word = word.trim();
+    match matches.subcommand() {
+        ("get", Some(m)) => {
+            let name = m.value_of("name").unwrap();
+            display_emoji(name);
+        }
+        _ => std::process::exit(0),
+    }
+}
 
-    println!("Searching for emoji {} \u{1F50D}", word);
-
+fn display_emoji(name: &str) {
     for emoji in emojis::EMOJIS {
-        if word == emoji.0 {
+        if name == emoji.0 {
             println!("{}", emoji.1);
-            return;
+            std::process::exit(0);
         }
     }
-    println!("Uh oh, no emoji found for: {}", word);
+    std::process::exit(1);
 }
