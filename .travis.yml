@@ -1,0 +1,20 @@
+language: rust
+sudo: false
+matrix:
+  include:
+    - os: linux
+      rust: stable
+      env: TARGET=x86_64-unknown-linux-gnu
+    - os: linux
+      rust: nightly
+      env: TARGET=x86_64-unknown-linux-gnu
+env:
+  global:
+    - RUST_BACKTRACE: full
+script:
+  - cargo build --verbose --all
+  - cargo test --verbose --all
+  - cargo doc --verbose --all
+notifications:
+  email:
+    on_success: never
