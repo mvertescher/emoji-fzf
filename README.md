@@ -1,5 +1,9 @@
 # `emoji-fzf`
 
+[![Build Status](https://travis-ci.com/mvertescher/emoji-fzf.svg?branch=master)](https://travis-ci.com/mvertescher/emoji-fzf)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 > 🦀 An emoji fuzzy finder written in Rust.
 
 Inspired by an excellent tool of the same name: [emoji-fzf](https://github.com/noahp/emoji-fzf)!
