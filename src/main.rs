@@ -14,12 +14,19 @@ fn main() {
                         .help("Name of the emoji to display")
                         .index(1)
                         .required(true)))
+        .subcommand(SubCommand::with_name("preview")
+                    .about("Display a list of all available emojis by name"))
         .get_matches();
 
     match matches.subcommand() {
         ("get", Some(m)) => {
             let name = m.value_of("name").unwrap();
             display_emoji(name);
+        }
+        ("preview", _) => {
+            for emoji in emojis::EMOJIS {
+                println!("{}", emoji.0);
+            }
         }
         _ => std::process::exit(0),
     }
