@@ -27,6 +27,6 @@ fn display_emoji(name: &str) {
 
 fn preview_emojis() {
     for emoji in emojis::EMOJIS {
-    	println!("{}", emoji.0);
+        println!("{}", emoji.0);
     }
 }
