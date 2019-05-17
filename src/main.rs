@@ -18,7 +18,8 @@ fn main() {
 fn display_emoji(name: &str) {
     for emoji in emojis::EMOJIS {
         if name == emoji.0 {
-            println!("{}", emoji.1);
+            // Output without trailing newline
+            print!("{}", emoji.1);
             std::process::exit(0);
         }
     }
