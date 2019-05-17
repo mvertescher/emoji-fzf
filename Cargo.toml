@@ -11,3 +11,4 @@ version = "0.1.0"
 
 [dependencies]
 clap = "2.32"
+atty = "0.2"

@@ -10,7 +10,7 @@ Inspired by an excellent tool of the same name: [emoji-fzf](https://github.com/n
 
 ## Usage
 
-```
+```plaintext
 emoji-fzf 0.1.0
 Matt Vertescher <mvertescher@gmail.com>
 An emoji fuzzy finder!
@@ -25,6 +25,13 @@ FLAGS:
 SUBCOMMANDS:
     get     Get unicode emoji given a name
     help    Prints this message or the help of the given subcommand(s)
+```
+
+Or the alias form integrated with fzf (include in your shell rc), and piping
+the result to xclip:
+
+```bash
+alias emoj="emoji-fzf preview | fzf --preview 'emoji-fzf get {1}' | cut -d \" \" -f 1 | emoji-fzf get | xclip"
 ```
 
 ## License
