@@ -10,5 +10,5 @@ repository = "https://github.com/mvertescher/emoji-fzf"
 version = "0.1.0"
 
 [dependencies]
-clap = "2.32"
+clap = "2.33"
 atty = "0.2"
