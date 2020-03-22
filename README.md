@@ -12,19 +12,18 @@ Inspired by an excellent tool of the same name: [emoji-fzf](https://github.com/n
 
 ```plaintext
 emoji-fzf 0.1.0
-Matt Vertescher <mvertescher@gmail.com>
-An emoji fuzzy finder!
 
 USAGE:
-    emoji-fzf [SUBCOMMAND]
+    emoji-fzf <SUBCOMMAND>
 
 FLAGS:
     -h, --help       Prints help information
     -V, --version    Prints version information
 
 SUBCOMMANDS:
-    get     Get unicode emoji given a name
-    help    Prints this message or the help of the given subcommand(s)
+    get        Get unicode emoji given a name (via arg or stdin).
+    help       Prints this message or the help of the given subcommand(s)
+    preview    Display a list of all available emojis by name.
 ```
 
 Or the alias form integrated with fzf (include in your shell rc), and piping

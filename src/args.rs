@@ -16,7 +16,6 @@ fn get_stdin() -> String {
 }
 
 #[derive(Debug, StructOpt)]
-#[structopt()]
 enum Opt {
     #[structopt(about = "Get unicode emoji given a name (via arg or stdin).")]
     Get {
