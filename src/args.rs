@@ -1,11 +1,9 @@
-use super::Command;
+//! Command argument parsing
 
 use atty::Stream;
-
 use std::io;
-
-use clap::{crate_authors, crate_description, crate_name, crate_version};
-use clap::{App, Arg, SubCommand};
+use structopt::StructOpt;
+use super::Command;
 
 fn get_stdin() -> String {
     if atty::is(Stream::Stdin) {
@@ -17,32 +15,24 @@ fn get_stdin() -> String {
     }
 }
 
-pub(super) fn parse() -> Command {
-    let matches = App::new(crate_name!())
-        .about(crate_description!())
-        .version(crate_version!())
-        .author(crate_authors!())
-        .subcommand(
-            SubCommand::with_name("get")
-                .about("Get unicode emoji given a name (via arg or stdin)")
-                .arg(
-                    Arg::with_name("name")
-                        .help("Name of the emoji to display")
-                        .index(1),
-                ),
-        )
-        .subcommand(
-            SubCommand::with_name("preview")
-                .about("Display a list of all available emojis by name"),
-        )
-        .get_matches();
+#[derive(Debug, StructOpt)]
+#[structopt()]
+enum Opt {
+    #[structopt(about = "Get unicode emoji given a name (via arg or stdin).")]
+    Get {
+        #[structopt(help = "Name of the emoji to display.")]
+        name: Option<String>,
+    },
+    #[structopt(about = "Display a list of all available emojis by name.")]
+    Preview,
+}
 
-    match matches.subcommand() {
-        ("get", Some(m)) => match m.value_of("name") {
-            Some(name) => Command::Get(name.to_string()),
-            _ => Command::Get(get_stdin()),
-        },
-        ("preview", _) => Command::Preview,
-        _ => std::process::exit(0),
+pub(super) fn parse() -> Command {
+    let opt = Opt::from_args();
+
+    match opt {
+        Opt::Get { name: None } => Command::Get(get_stdin()),
+        Opt::Get { name: Some(n) } => Command::Get(n),
+        Opt::Preview => Command::Preview,
     }
 }
