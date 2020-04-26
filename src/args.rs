@@ -1,9 +1,9 @@
 //! Command argument parsing
 
+use super::Command;
 use atty::Stream;
 use std::io;
 use structopt::StructOpt;
-use super::Command;
 
 fn get_stdin() -> String {
     if atty::is(Stream::Stdin) {
