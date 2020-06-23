@@ -8,6 +8,14 @@
 
 Inspired by an excellent tool of the same name: [emoji-fzf](https://github.com/noahp/emoji-fzf)!
 
+## Install
+
+For now, you can install a development version of this tool locally from source:
+
+```shell
+cargo install --git https://github.com/mvertescher/emoji-fzf.git --force
+```
+
 ## Usage
 
 ```plaintext
