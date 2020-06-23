@@ -11,7 +11,7 @@ Inspired by an excellent tool of the same name: [emoji-fzf](https://github.com/n
 ## Usage
 
 ```plaintext
-emoji-fzf 0.1.0
+emoji-fzf 0.0.0
 
 USAGE:
     emoji-fzf <SUBCOMMAND>

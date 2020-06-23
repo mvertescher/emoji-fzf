@@ -7,7 +7,7 @@ homepage = "https://github.com/mvertescher/emoji-fzf"
 license = "MIT OR Apache-2.0"
 name = "emoji-fzf"
 repository = "https://github.com/mvertescher/emoji-fzf"
-version = "0.1.0"
+version = "0.0.0"
 
 [dependencies]
 atty = "0.2"
